@@ -12,7 +12,7 @@ First clone the repo.
 ```
 git clone https://github.com/Bruno-Eijs/UnboxLetters.git
 ```
-Then if you have GCC and MAKE, run `make`. If you want to use a different compiler you can modify the `makefile`. If you don't use MAKE you can compile the C code yourself with your compiler of choice; for example
+Then if you have GCC and MAKE, run `make` inside the `UnboxLetters/` directory. If you want to use a different compiler you can modify the `makefile`. If you don't use MAKE you can compile the C code yourself with your compiler of choice; for example
 ```
 gcc -g -O2 -o unboxletters src/main.c
 ```
