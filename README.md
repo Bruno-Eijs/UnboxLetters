@@ -10,7 +10,7 @@ The program works on my own system, but there is no real UI to configure paramet
 ### Setup (GNU/Linux type OS)
 First clone the repo.
 ```
-git clone https://github.com/Bruno-Eijs/UnboxLetters
+git clone https://github.com/Bruno-Eijs/UnboxLetters.git
 ```
 Then if you have GCC and MAKE, run `make`. If you want to use a different compiler you can modify the `makefile`. If you don't use MAKE you can compile the C code yourself with your compiler of choice; for example
 ```
