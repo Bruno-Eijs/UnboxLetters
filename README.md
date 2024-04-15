@@ -5,7 +5,7 @@ https://www.nytimes.com/puzzles/letter-boxed
 **UnboxLetters** is CLI program that generates solutions to the Letter Boxed puzzles. Only available for GNU/Linux type operating systems. This project is not affiliated with the New York Times. It is mostly an excuse to write something in C.
 
 ##### Note: This is a work in progress!
-The program works on my own system, but there is no real UI to configure parameters. For example this means that if you would like to generate a more narrow or a wider class of solutions, this would need to be changed in the source and then the binary would need to be recompiled. See the "Configuration" section of this document.
+The program works but there is no real UI to configure parameters. For example this means that if you would like to generate a more narrow or a wider class of solutions, this would need to be changed in the source and then the binary would need to be recompiled. See the "Configuration" section of this document.
 
 ### Setup (GNU/Linux type OS)
 First clone the repo.
@@ -32,7 +32,7 @@ In `output/solutions.txt` the words are shown with their positions on the Letter
 
 #### Configuration
 There are 3 macro constants in the code that can be modified within limits, though not much testing has been performed with values outside the default values:
-- `N_WORD_GOAL` in `src/main.c` is the maximum number of words that are allowed in a single solution. It is set to `2` by default. Setting this to values such as `5`, `6` or higher will make the computation take very long and will potentially make the `output/solutions.txt` file very large.
+- `N_WORD_GOAL` in `src/main.c` is the maximum number of words that are allowed in a single solution. It is set to `2` by default. Setting this to values such as `5`, `6` or higher will make the computation take a lot longer and will potentially make the `output/solutions.txt` file a lot larger.
 - `BOX_WIDTH` in `src/box.h` is the width of the Letter Box. Its default value is `3`. Some minor things will surely break if this value is set to `7` or higher.
 - `MAX_WORD_LENGTH` in `src/box.h`, is the maximum length of a word in the word list.  Its default value is `40`.
 
@@ -45,5 +45,8 @@ https://www.infochimps.com/datasets/word-list-350000-simple-english-words-excel-
 
 **Note:** This is not an ideal word list for this purpose. It contains many words that are not accepted by the Letter Boxed game.
 
-You can use your own word list by replacing `data/word-list.txt` with a text file with the same name. The text should by in ASCII encoding and the formatting should be as follows: Words should be in all-caps and separated by a LF character.
+You can use your own word list by replacing `data/word-list.txt` with a text file with the same name. The text should be in 
+- single byte character encoding 
+- all-caps, and
+- separated by a LF character.
 Lastly it should be noted that `MAX_WORD_LENGTH` is set in `src/box.h` to `40` but can be modified to the necessary value in case the word list contains longer words.
